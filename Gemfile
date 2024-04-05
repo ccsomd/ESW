@@ -27,3 +27,12 @@ group :development do
   # gem "spring"
 end
 
+gem "devise", "~> 4.9"
+gem "high_voltage", "~> 3.1"
+gem "importmap-rails", "~> 2.0"
+gem "omniauth-azure-activedirectory-v2", "~> 0.1.1"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "redis", "~> 5.1"
+gem "stimulus-rails", "~> 1.3"
+gem "tailwindcss-rails", "~> 2.3"
+gem "turbo-rails", "~> 2.0"
