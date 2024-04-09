@@ -277,6 +277,7 @@ Devise.setup do |config|
                 client_secret: Rails.application.credentials.dig(:azure, :client_secret),
                 tenant_id: Rails.application.credentials.dig(:azure, :tenant_id), # Remove for 'common' end-point.
                 name: "microsoft",
+                # custom_policy: Rails.application.credentials.dig(:azure, :custom_policy_id),
                 strategy_class: OmniAuth::Strategies::AzureActivedirectoryV2
 
   # ==> Warden configuration
