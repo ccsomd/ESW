@@ -1,11 +1,7 @@
 class User < ApplicationRecord
   devise  :timeoutable,
-          # :database_authenticatable,
-          # :lockable,
           :trackable,
           :omniauthable,
-          # :rememberable,
-          # :validatable,
           omniauth_providers: [:microsoft]
 
   def self.from_omniauth(auth)
