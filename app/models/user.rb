@@ -17,7 +17,7 @@ class User < ApplicationRecord
       user.name = auth.info.name
       user.last_name = auth.info.last_name
       user.first_name = auth.info.first_name
-      # user.badge = auth.info.employeeid
+      user.badge = auth.extra.raw_info.employeeid
     end
   end
 end
