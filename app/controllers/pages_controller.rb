@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def authenticate
     case params[:id]
-    when params[:id]!='welcome'
+    when params[:id]!="welcome"
       authenticate_user!
     end
   end

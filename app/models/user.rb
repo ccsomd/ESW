@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise  :timeoutable,
           :trackable,
           :omniauthable,
-          omniauth_providers: [:microsoft]
+          omniauth_providers: [ :microsoft ]
 
   def self.from_omniauth(auth)
     where(uid: auth.uid, provider: auth.provider).first_or_create do |user|
