@@ -29,7 +29,7 @@ group :development do
 end
 
 gem "devise", "~> 4.9"
-gem "high_voltage", "~> 3.1"
+gem "devise", "~> 4.9.4"
 gem "importmap-rails", "~> 2.0"
 gem "omniauth-azure-activedirectory-v2", "~> 2.0.1"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
