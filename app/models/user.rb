@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise  :timeoutable,
           :trackable,
           :omniauthable,
-          omniauth_providers: [ :microsoft ]
+          omniauth_providers: [ :ccso ]
 
   def self.from_omniauth(auth)
     where(uid: auth.uid, provider: auth.provider).first_or_create do |user|
@@ -14,7 +14,7 @@ class User < ApplicationRecord
       user.last_name = auth.info.last_name
       user.first_name = auth.info.first_name
       user.badge = auth.extra.raw_info.employeeid
-      user.roles = auth.extra.raw_info.roles
+      user.roles = auth.extra.raw_info.roles.join(",")
     end
   end
 end

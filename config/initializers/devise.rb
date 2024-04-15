@@ -272,11 +272,11 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :microsoft,
+  config.omniauth :ccso,
                 client_id: Rails.application.credentials.dig(:azure, :client_id),
                 client_secret: Rails.application.credentials.dig(:azure, :client_secret),
                 tenant_id: Rails.application.credentials.dig(:azure, :tenant_id), # Remove for 'common' end-point.
-                name: "microsoft",
+                name: "ccso",
                 strategy_class: OmniAuth::Strategies::AzureActivedirectoryV2
 
   # ==> Warden configuration
@@ -300,7 +300,7 @@ Devise.setup do |config|
   #
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
-  # config.omniauth_path_prefix = '/my_engine/users/auth'
+  config.omniauth_path_prefix = "/auth"
 
   # ==> Hotwire/Turbo configuration
   # When using Devise with Hotwire/Turbo, the http status for error responses
