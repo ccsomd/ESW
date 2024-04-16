@@ -1,8 +1,14 @@
 class User < ApplicationRecord
-  devise  :timeoutable,
-          :trackable,
-          :omniauthable,
-          omniauth_providers: [ :ccso ]
+  validates :email,      presence: true, uniqueness: true
+  validates :provider,   presence: true
+  validates :uid,        presence: true, uniqueness: true
+  validates :name,       presence: true
+  validates :last_name,  presence: true
+  validates :first_name, presence: true
+  validates :badge,      presence: true, uniqueness: true
+  validates :roles,      presence: true
+
+  devise :timeoutable, :trackable, :omniauthable, omniauth_providers: [ :ccso ]
 
   def self.from_omniauth(auth)
     where(uid: auth.uid, provider: auth.provider).first_or_create do |user|
