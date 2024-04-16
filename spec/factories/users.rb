@@ -8,7 +8,7 @@ FactoryBot.define do
     email { Faker::Internet.email(name: name, separators: [ '+' ], domain: 'example.com') }
     provider { Faker::Alphanumeric.alpha(number: 5) }
     uid { Faker::Internet.uuid }
-    badge { Faker::Number.between(from: 700, to: 19999) }
+    badge { "CCSO#{Faker::Number.between(from: 700, to: 19999)}" }
     roles { 'user' }
     encrypted_password { Faker::Internet.password() }
   end
